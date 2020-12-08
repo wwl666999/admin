@@ -36,7 +36,12 @@ export default new Router({
                     component: () => import(/* webpackChunkName: "upload" */ '../components/page/Upload.vue'),
                     meta: { title: '文件上传' }
                 },
-    
+                {
+                    // 数据导入组件
+                    path: '/loader',
+                    component: () => import(/* webpackChunkName: "upload" */ '../components/page/Loader.vue'),
+                    meta: { title: '数据导入' }
+                },
                 {
                     // 权限页面
                     path: '/permission',

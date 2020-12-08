@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// 创建axios实例
 const service = axios.create({
     // process.env.NODE_ENV === 'development' 来判断是否开发环境
     // easy-mock服务挂了，暂时不使用了
@@ -7,6 +8,7 @@ const service = axios.create({
     timeout: 5000
 });
 
+// request拦截器
 service.interceptors.request.use(
     config => {
         return config;
@@ -17,6 +19,7 @@ service.interceptors.request.use(
     }
 );
 
+// respone拦截器
 service.interceptors.response.use(
     response => {
         if (response.status === 200) {

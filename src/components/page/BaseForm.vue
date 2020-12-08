@@ -1,13 +1,5 @@
 <template>
     <div>
-        <div class="crumbs">
-            <el-breadcrumb separator="/">
-                <el-breadcrumb-item>
-                    <i class="el-icon-lx-calendar"></i> 表单
-                </el-breadcrumb-item>
-                <el-breadcrumb-item>基本表单</el-breadcrumb-item>
-            </el-breadcrumb>
-        </div>
         <div class="container">
             <div class="form-box">
                 <el-form ref="form" :model="form" label-width="80px">
@@ -18,7 +10,7 @@
                         <el-select v-model="form.region" placeholder="请选择">
                             <el-option key="bbk" label="步步高" value="bbk"></el-option>
                             <el-option key="xtc" label="小天才" value="xtc"></el-option>
-                            <el-option key="imoo" label="imoo" value="imoo"></el-option>
+                            <el-option key="iphone" label="iphone" value="iphone"></el-option>
                         </el-select>
                     </el-form-item>
                     <el-form-item label="日期时间">
@@ -50,14 +42,14 @@
                         <el-checkbox-group v-model="form.type">
                             <el-checkbox label="步步高" name="type"></el-checkbox>
                             <el-checkbox label="小天才" name="type"></el-checkbox>
-                            <el-checkbox label="imoo" name="type"></el-checkbox>
+                            <el-checkbox label="iphone" name="type"></el-checkbox>
                         </el-checkbox-group>
                     </el-form-item>
                     <el-form-item label="单选框">
                         <el-radio-group v-model="form.resource">
                             <el-radio label="步步高"></el-radio>
                             <el-radio label="小天才"></el-radio>
-                            <el-radio label="imoo"></el-radio>
+                            <el-radio label="iphone"></el-radio>
                         </el-radio-group>
                     </el-form-item>
                     <el-form-item label="文本框">
@@ -114,16 +106,20 @@ export default {
                     ]
                 },
                 {
-                    value: 'hunan',
-                    label: '湖南省',
+                    value: 'sichuan',
+                    label: '四川省',
                     children: [
                         {
-                            value: 'changsha',
-                            label: '长沙市',
+                            value: 'chengdu',
+                            label: '成都市',
                             children: [
                                 {
-                                    value: 'yuelu',
-                                    label: '岳麓区'
+                                    value: 'jinniu',
+                                    label: '金牛区'
+                                },
+                                {
+                                    value: 'qingyang',
+                                    label: '青羊区'
                                 }
                             ]
                         }

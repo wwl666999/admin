@@ -13,8 +13,8 @@
                         type="password"
                         placeholder="password"
                         v-model="param.password"
-                        @keyup.enter.native="submitForm()"
                     >
+                    <!--Input Slots自带的几个值:prefix、suffix、prepend、append -->
                         <el-button slot="prepend" icon="el-icon-lx-lock"></el-button>
                     </el-input>
                 </el-form-item>
@@ -36,6 +36,7 @@ export default {
                 password: '123123',
             },
             rules: {
+                //required true代表该对象为必填项   trigger: 'blur'代表在鼠标失去焦点时触发
                 username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
                 password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
             },
@@ -43,6 +44,9 @@ export default {
     },
     methods: {
         submitForm() {
+            /*  $refs用来绑定<el-form >实例*/
+            /* validate对整个表单进行校验的方法，参数为一个回调函数。该回调函数会在校验结束后被调用，
+            并传入两个参数：是否校验成功和未通过校验的字段。若不传入回调函数，则会返回一个 promise*/
             this.$refs.login.validate(valid => {
                 if (valid) {
                     this.$message.success('登录成功');

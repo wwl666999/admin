@@ -76,10 +76,15 @@ export default {
                     index: 'upload',
                     title: '文件上传'
                 },
+                {   
+                    icon:'el-icon-download',
+                    index: 'loader',
+                    title: '数据导入导出'
+                },
                 {
                     icon: 'el-icon-lx-warn',
                     index: 'permission',
-                    title: '权限测试'
+                    title: '权限界面'
                 },
             ]
         };

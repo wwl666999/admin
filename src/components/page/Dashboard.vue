@@ -1,7 +1,6 @@
 <template>
     <div>
         <el-row :gutter="20">
-            
                 <el-card shadow="hover" class="mgb20" style="height:252px;">
                     <div class="user-info">
                         <img src="../../assets/img/img.jpg" class="user-avator" alt />
@@ -19,8 +18,6 @@
                         <span>成都</span>
                     </div>
                 </el-card>
-              
-           
         </el-row>
     </div>
 </template>
