@@ -24,6 +24,8 @@
       <upload-excel :before-upload="beforeUpload" :on-success="handleSuccess" />
     <el-table :data="tableData1" border highlight-current-row>
       <el-table-column v-for="item of tableHeader" :key="item" :prop="item" :label="item" />
+      <el-table-column v-for="item of tableHeader" :key="item" :prop="item" :label="item" />
+      
     </el-table>
     </el-tab-pane>
   </el-tabs>
@@ -53,7 +55,7 @@ const tableData = [
   {
     name: '李四',
     age: 30,
-    gender: '',
+    gender: '女',
     mobilePhone: '15999999939',
     graduationDate: '1997/06/05'
   },
@@ -76,7 +78,7 @@ export default {
     return {
       tableData,
       activeName: 'exportExcel',
-      tableData1:[],
+      tableData1:['1'],
       tableHeader: []
     }
   },

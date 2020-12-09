@@ -30,41 +30,8 @@ export default {
     data() {
         return {
             name: localStorage.getItem('ms_username'),
-            // data: [
-            //     {
-            //         name: '2018/09/04',
-            //         value: 1083
-            //     },
-            //     {
-            //         name: '2018/09/05',
-            //         value: 941
-            //     },
-            //     {
-            //         name: '2018/09/06',
-            //         value: 1139
-            //     },
-            //     {
-            //         name: '2018/09/07',
-            //         value: 816
-            //     },
-            //     {
-            //         name: '2018/09/08',
-            //         value: 327
-            //     },
-            //     {
-            //         name: '2018/09/09',
-            //         value: 228
-            //     },
-            //     {
-            //         name: '2018/09/10',
-            //         value: 1065
-            //     }
-            // ],
         };
     },
-    // components: {
-    //     Schart
-    // },
     computed: {
         role() {
             return this.name === 'admin' ? '超级管理员' : '普通用户';

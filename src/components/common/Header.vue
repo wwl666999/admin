@@ -54,7 +54,7 @@ export default {
         // 侧边栏折叠
         collapseChage() {
             this.collapse = !this.collapse;
-            bus.$emit('collapse', this.collapse);
+            bus.$emit('collapse', this.collapse);//在bus中触发'collapse'事件，并将this.collapse传递出去
         },
 
     },

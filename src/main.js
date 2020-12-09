@@ -22,8 +22,8 @@ const i18n = new VueI18n({
 
 //使用钩子函数对路由进行权限跳转
 router.beforeEach((to, from, next) => {
-    document.title = `${to.meta.title} | vue-manage-system`;
-    const role = localStorage.getItem('ms_username');
+    document.title = `${to.meta.title} | vue-manage-system`;//meta.title是在router/index.js中定义的
+    const role = localStorage.getItem('ms_username');//获取login页面存储的用户信息
     if (!role && to.path !== '/login') {
         next('/login');
     } else if (to.meta.permission) {
@@ -36,7 +36,7 @@ router.beforeEach((to, from, next) => {
                 confirmButtonText: '确定'
             });
         } else {
-            next();
+            next();//正常放行
         }
     }
 });
