@@ -49,7 +49,7 @@ const tableData = [
     name: '赵六',
     age: 20,
     gender: '男',
-    mobilePhone: '',
+    mobilePhone: '15294688456',
     graduationDate: '2011/08/10'
   },
   {

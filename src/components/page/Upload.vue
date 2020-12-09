@@ -1,6 +1,7 @@
 <template>
     <div>
         <div class="container">
+            <div class="content-title">文件上传</div>
             <el-upload
                 class="upload-demo"
                 drag
@@ -10,11 +11,11 @@
                 <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
                 <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
             </el-upload>
-            <div class="content-title">支持裁剪</div>
-            <div class="plugins-tips">
+            <div class="content-title">用户头像上传</div>
+            <!-- <div class="plugins-tips">
                 vue-cropperjs：一个封装了 cropperjs 的 Vue 组件。
                 访问地址：<a href="https://github.com/Agontuk/vue-cropperjs" target="_blank">vue-cropperjs</a>
-            </div>
+            </div> -->
             <div class="crop-demo">
                 <img :src="cropImg" class="pre-img">
                 <div class="crop-demo-btn">选择图片
@@ -126,5 +127,8 @@
         top: 0;
         opacity: 0;
         cursor: pointer;
+    }
+    .el-upload__tip{
+        margin-bottom: 10px;
     }
 </style>

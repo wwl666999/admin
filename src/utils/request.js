@@ -2,10 +2,11 @@ import axios from 'axios';
 
 // 创建axios实例
 const service = axios.create({
-    // process.env.NODE_ENV === 'development' 来判断是否开发环境
-    // easy-mock服务挂了，暂时不使用了
-    // baseURL: 'https://www.easy-mock.com/mock/592501a391470c0ac1fab128',
-    timeout: 5000
+    baseURL: 'https://www.easy-mock.com/mock/592501a391470c0ac1fab128',
+    timeout: 5000,
+    header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+    }
 });
 
 // request拦截器

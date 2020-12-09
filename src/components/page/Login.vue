@@ -33,7 +33,7 @@ export default {
         return {
             param: {
                 username: 'admin',
-                password: '123123',
+                password: '123456',
             },
             rules: {
                 //required true代表该对象为必填项   trigger: 'blur'代表在鼠标失去焦点时触发

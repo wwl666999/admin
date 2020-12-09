@@ -1,6 +1,7 @@
 <template>
     <div>
         <el-row :gutter="20">
+            <el-col :span="12">
                 <el-card shadow="hover" class="mgb20" style="height:252px;">
                     <div class="user-info">
                         <img src="../../assets/img/img.jpg" class="user-avator" alt />
@@ -9,15 +10,31 @@
                             <div>{{role}}</div>
                         </div>
                     </div>
-                    <div class="user-info-list">
-                        上次登录时间：
-                        <span>2020-12-08</span>
-                    </div>
-                    <div class="user-info-list">
-                        上次登录地点：
-                        <span>成都</span>
-                    </div>
                 </el-card>
+            </el-col>
+            <el-col :span="12">
+                 <el-card shadow="hover" style="height:252px;">
+                    <div slot="header" class="clearfix">
+                        <span>上班时间</span>
+                    </div>9:00-9:20
+                    <el-progress :percentage="31.3" color="#42b983"></el-progress>9:20-9:40
+                    <el-progress :percentage="54.1" color="#f1e05a"></el-progress>9:40-10:00
+                    <el-progress :percentage="14.6"></el-progress>
+                </el-card>
+            </el-col>
+            
+        </el-row>
+        <el-row :gutter="20">
+            <el-col :span="12">
+                <el-card shadow="hover">
+                    <schart ref="bar" class="schart" canvasId="bar" :options="options"></schart>
+                </el-card>
+            </el-col>
+            <el-col :span="12">
+                <el-card shadow="hover">
+                    <schart ref="line" class="schart" canvasId="line" :options="options2"></schart>
+                </el-card>
+            </el-col>
         </el-row>
     </div>
 </template>
@@ -30,7 +47,53 @@ export default {
     data() {
         return {
             name: localStorage.getItem('ms_username'),
+            options: {
+                type: 'bar',
+                title: {
+                    text: '最近一周各品类销售图'
+                },
+                xRorate: 25,
+                labels: ['周一', '周二', '周三', '周四', '周五'],
+                datasets: [
+                    {
+                        label: '家电',
+                        data: [234, 278, 270, 190, 230]
+                    },
+                    {
+                        label: '百货',
+                        data: [164, 178, 190, 135, 160]
+                    },
+                    {
+                        label: '食品',
+                        data: [144, 198, 150, 235, 120]
+                    }
+                ]
+            },
+            options2: {
+                type: 'line',
+                title: {
+                    text: '最近几个月各品类销售趋势图'
+                },
+                labels: ['6月', '7月', '8月', '9月', '10月'],
+                datasets: [
+                    {
+                        label: '家电',
+                        data: [234, 278, 270, 190, 230]
+                    },
+                    {
+                        label: '百货',
+                        data: [164, 178, 150, 135, 160]
+                    },
+                    {
+                        label: '食品',
+                        data: [74, 118, 200, 235, 90]
+                    }
+                ]
+            }
         };
+    },
+    components: {
+        Schart
     },
     computed: {
         role() {
@@ -45,7 +108,6 @@ export default {
                 item.name = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
             });
         }
-      
     }
 };
 </script>

@@ -43,6 +43,12 @@ export default new Router({
                     meta: { title: '数据导入' }
                 },
                 {
+                    // 日历
+                    path: 'calendar',
+                    component: () => import(/* webpackChunkName: "upload" */ '../components/page/Calendar.vue'),
+                    meta: { title: '日历' }
+                },
+                {
                     // 权限页面
                     path: '/permission',
                     component: () => import(/* webpackChunkName: "permission" */ '../components/page/Permission.vue'),

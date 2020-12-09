@@ -64,7 +64,7 @@ export default {
                 {
                     icon: 'el-icon-s-data',
                     index: 'form',
-                    title: '基本表单'
+                    title: '表单填写'
                 },
                 {
                     icon: 'el-icon-s-order',
@@ -75,6 +75,11 @@ export default {
                     icon:'el-icon-upload',
                     index: 'upload',
                     title: '文件上传'
+                },
+                   {   
+                    icon:'el-icon-date',
+                    index: 'calendar',
+                    title: '日历'
                 },
                 {   
                     icon:'el-icon-download',
