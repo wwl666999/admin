@@ -28,25 +28,19 @@ export default new Router({
                     // 富文本编辑器组件
                     path: '/editor',
                     component: () => import(/* webpackChunkName: "editor" */ '../components/page/VueEditor.vue'),
-                    meta: { title: '富文本编辑器' }
+                    meta: { title: '富文本编辑器',permission:true }
                 },
                 {
                     // 图片上传组件
                     path: '/upload',
                     component: () => import(/* webpackChunkName: "upload" */ '../components/page/Upload.vue'),
-                    meta: { title: '文件上传' }
+                    meta: { title: '文件上传',permission:true }
                 },
                 {
                     // 数据导入组件
                     path: '/loader',
                     component: () => import(/* webpackChunkName: "upload" */ '../components/page/Loader.vue'),
                     meta: { title: '数据导入' }
-                },
-                {
-                    // 日历
-                    path: 'calendar',
-                    component: () => import(/* webpackChunkName: "upload" */ '../components/page/Calendar.vue'),
-                    meta: { title: '日历' }
                 },
                 {
                     // 权限页面
